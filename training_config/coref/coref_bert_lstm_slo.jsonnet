@@ -5,10 +5,10 @@
 local bert_model = "EMBEDDIA/crosloengual-bert";
 local max_length = 128;
 local feature_size = 20;
-local max_span_width = 30;
+local max_span_width = 10;
 
 local bert_dim = 768;  # uniquely determined by bert_model
-local lstm_dim = 200;
+local lstm_dim = 100;
 local span_embedding_dim = 4 * lstm_dim + bert_dim + feature_size;
 local span_pair_embedding_dim = 3 * span_embedding_dim + feature_size;
 
