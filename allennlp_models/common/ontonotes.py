@@ -343,10 +343,9 @@ class Ontonotes:
             (predicate, labels) for predicate, labels in zip(verbal_predicates, span_labels[1:])
         ]
 
-        if all(parse_pieces):
-            parse_tree = Tree.fromstring("".join(parse_pieces))
-        else:
-            parse_tree = None
+        # NOTE: deleted parse tree handling, SentiCoref does not have parse trees annotated
+        parse_tree = None
+
         coref_span_tuples: Set[TypedSpan] = {
             (cluster_id, span) for cluster_id, span_list in clusters.items() for span in span_list
         }
